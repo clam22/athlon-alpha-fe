@@ -15,3 +15,9 @@ artifacts:
   base-directory: dist
   files:
     - "**/*"
+
+logs_config {
+  cloudwatch_logs {
+    status = "ENABLED"
+  }
+}
