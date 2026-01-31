@@ -16,8 +16,3 @@ artifacts:
   files:
     - "**/*"
 
-logs_config {
-  cloudwatch_logs {
-    status = "ENABLED"
-  }
-}
