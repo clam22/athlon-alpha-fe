@@ -22,7 +22,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "rootDirs": ["src"],
+    /* Alias */
+    // "rootDirs": ["src"],
     "paths": {
       "@/*": ["./src/*"]
     }

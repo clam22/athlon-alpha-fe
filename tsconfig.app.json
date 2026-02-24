@@ -24,7 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "rootDirs": ["src"],
+    // "rootDirs": ["src"],
     "paths": {
       "@/*": ["./src/*"]
     }
