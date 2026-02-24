@@ -1,0 +1,11 @@
+{
+  "error" : {
+    "bad-request": "400 - Bad Request.",
+    "unauthorised": "401 - Unauthorised.",
+    "forbidden": "403 - Forbidden.",
+    "not-found": "404 - Not Found.",
+    "server": "500 - Internal Server Error.",
+    "unknown": "Unknown Error",
+    "axios": "Axios Error"
+  }
+}

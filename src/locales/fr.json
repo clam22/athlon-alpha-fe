@@ -1,0 +1,11 @@
+{
+  "error": {
+    "bad-request": "400 - Mauvaise requête.",
+    "unauthorised": "401 - Non autorisé.",
+    "forbidden": "403 - Accès refusé.",
+    "not-found": "404 - Introuvable.",
+    "server": "500 - Erreur interne du serveur.",
+    "unknown": "Erreur inconnue",
+    "axios": "Erreur Axios"
+  }
+}
