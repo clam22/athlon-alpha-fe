@@ -153,7 +153,8 @@ export function AuthenticationView() {
     console.log("direct to dashboard");
     console.log(currUser?.email ?? "User is null");
     toast.info(currUser?.email ?? "User is null");
-    toast("You are logged in")
+    toast("You are logged in");
+    toast.success("Welcome " + currUser?.name);
   };
 
   const handleInputOTPFormSubmit = () => {
