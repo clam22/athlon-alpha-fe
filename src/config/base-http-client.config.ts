@@ -23,6 +23,7 @@ export const initApi = async () => {
   try {
     const { data } = await axios.get("/config.json");
     baseHttpClient.defaults.baseURL = data.API_URL;
+    toast.success("Successfully fetched environment variables");
   } catch (e) {
     toast.error("Failed to fetch config.json, using localhost fallback");
     baseHttpClient.defaults.baseURL = localhost;
