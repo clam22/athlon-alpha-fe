@@ -1,4 +1,4 @@
-name: Athlon Alpha CI
+name: Athlon Alpha Frontend CI
 
 on:
   push:
