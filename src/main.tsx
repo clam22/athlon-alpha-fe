@@ -7,7 +7,9 @@ import "./config/internationalisation"
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './store';
+import { initApi } from './config/base-http-client.config';
 
+await initApi();
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
