@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "sonner";
-import i18n from "@/config/internationalisation"
+import i18n from "@/config/internationalisation";
 
 const localhost: string = "http://localhost:5000";
 
@@ -10,10 +10,26 @@ const config = {
     Accept: "application/json; charset=utf-8",
     "Content-Type": "application/json; charset=utf-8",
   },
-  withCredentials: true
+  withCredentials: true,
 };
 
 const baseHttpClient = axios.create(config);
+
+var apiInitialized: boolean = false;
+
+export const initApi = async () => {
+  if (apiInitialized) return;
+
+  try {
+    const { data } = await axios.get("/config.json");
+    baseHttpClient.defaults.baseURL = data.API_URL;
+  } catch (e) {
+    toast.error("Failed to fetch config.json, using localhost fallback");
+    baseHttpClient.defaults.baseURL = localhost;
+  }
+
+  apiInitialized = true;
+};
 
 baseHttpClient.interceptors.response.use(
   (response) => response,
