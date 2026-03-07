@@ -34,6 +34,8 @@ export const LanguageSwitcher = () => {
           <SelectLabel>Langages</SelectLabel>
           <SelectItem value="en">English</SelectItem>
           <SelectItem value="fr">French</SelectItem>
+          <SelectItem value="ts">Xitsonga</SelectItem>
+          <SelectItem value="zu">Isizulu</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

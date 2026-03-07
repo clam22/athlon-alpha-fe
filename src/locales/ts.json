@@ -1,0 +1,86 @@
+{
+  "error": {
+    "badRequest": "400 - Xikombelo xi hoxekile.",
+    "unauthorised": "401 - A wu pfumeleriwi.",
+    "forbidden": "403 - A swi pfumeleriwi.",
+    "notFound": "404 - A swi kumeki.",
+    "server": "500 - Xihoxo xa server ya le ndzeni.",
+    "unknown": "Xihoxo lexi nga tivekiki",
+    "axios": "Xihoxo xa Axios"
+  },
+  "authentication": {
+    "login": {
+      "title": "Nghena",
+      "description": "Nghenisa vuxokoxoko bya wena leswaku u nghena",
+      "actionButton": "Tsarisa",
+      "emailLabel": "Imeyili",
+      "passwordLabel": "Phasiwedi",
+      "submit": "Nghena",
+      "submutting": "Ku tiyisisa vutitivisi bya wena...",
+      "passwordless": "Nghena handle ka phasiwedi",
+      "error": "Ku nghena ku tsandzekile!",
+      "success": "U nghene kahle",
+      "validationErrors": {
+        "email": {
+          "required": "Imeyili ya laveka"
+        },
+        "password": {
+          "required": "Phasiwedi ya laveka"
+        }
+      }
+    },
+    "register": {
+      "title": "Endla akhawunti",
+      "description": "Nghenisa vuxokoxoko bya wena leswaku u endla akhawunti",
+      "actionButton": "Nghena",
+      "nameLabel": "Vito",
+      "surnameLabel": "Xivongo",
+      "emailLabel": "Imeyili",
+      "passwordLabel": "Phasiwedi",
+      "submit": "Tsarisa",
+      "submitting": "Ku endla akhawunti ya wena...",
+      "error": "Ku tsarisa ku tsandzekile!",
+      "success": {
+        "message": "Ku tsarisa ku humelerile!",
+        "userConfirmedDescription": "Wa amukeriwa!",
+        "userNotConfirmedDescription": "U fanele ku tiyisisa akhawunti ya wena leswaku u ya emahlweni"
+      },
+      "validationErrors": {
+        "name": {
+          "required": "Vito ra laveka"
+        },
+        "surname": {
+          "required": "Xivongo xi laveka"
+        },
+        "email": {
+          "required": "Imeyili ya laveka"
+        },
+        "password": {
+          "length": "Phasiwedi yi fanele yi va ni 8 wa maletere kumbe ku tlula",
+          "number": "Phasiwedi yi fanele yi va ni nomboro yin'we",
+          "lowercase": "Phasiwedi yi fanele yi va ni letere leritsongo",
+          "uppercase": "Phasiwedi yi fanele yi va ni letere lerikulu",
+          "character": "Phasiwedi yi fanele yi va ni ximakiwa xo hlawuleka"
+        }
+      }
+    },
+    "otp": {
+      "title": "Tiyisisa adirese ya imeyili",
+      "description": "Hi rhumele khodi yo tiyisisa eka imeyili ya wena",
+      "codeLabel": "Khodi yo tiyisisa",
+      "submit": "Tiyisisa",
+      "submitting": "Ku tiyisisa...",
+      "error": "Khodi yo tiyisisa yi tsandzekile",
+      "success": {
+        "message": "Ku tiyisisa ku humelerile",
+        "description": "Adirese ya wena ya imeyili yi tiyisisiwile"
+      },
+      "validationErrors": {
+        "confirmationCode": {
+          "length": "Khodi yi fanele yi va ni 6 wa tidijiti",
+          "numbers": "Khodi yi fanele yi va ni tinomboro ntsena"
+        }
+      }
+    }
+  }
+}

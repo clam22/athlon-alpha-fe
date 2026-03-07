@@ -20,6 +20,7 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/input-group";
 import React, { useState } from "react";
 import type { AuthenticationMode } from "@/types/authentication.type";
 import type { LoginInput } from "@/validations/authentication.schema";
+import { useTranslation } from "react-i18next";
 
 interface LoginForm {
   email: string;
@@ -43,7 +44,10 @@ export function LoginForm({
   handleAuthType,
   isSubmitting,
 }: LoginFormProps) {
+  const { t } = useTranslation();
+
   const [isPasswordViewable, SetIsPasswordViewable] = useState<Boolean>(false);
+
   const handlePasswordViewability = () => {
     SetIsPasswordViewable(!isPasswordViewable);
   };
@@ -59,8 +63,12 @@ export function LoginForm({
   return (
     <Card className="w-9/12 lg:w-6/12">
       <CardHeader>
-        <CardTitle className="heading3">Log In</CardTitle>
-        <CardDescription>Enter your details to log in</CardDescription>
+        <CardTitle className="heading3">
+          {t("authentication.login.title")}
+        </CardTitle>
+        <CardDescription>
+          {t("authentication.login.description")}
+        </CardDescription>
         <CardAction>
           <Button
             variant="link"
@@ -68,7 +76,7 @@ export function LoginForm({
             className="heading4"
             onClick={() => handleAuthType("register")}
           >
-            Register
+            {t("authentication.login.actionButton")}
           </Button>
         </CardAction>
       </CardHeader>
@@ -84,10 +92,12 @@ export function LoginForm({
             <FieldSet>
               <FieldGroup>
                 <Field>
-                  <FieldLabel>Email</FieldLabel>
+                  <FieldLabel>
+                    {t("authentication.login.emailLabel")}
+                  </FieldLabel>
                   <InputGroup>
                     <InputGroupInput
-                      placeholder="Email..."
+                      placeholder={`${t("authentication.login.emailLabel")}...`}
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
@@ -100,10 +110,12 @@ export function LoginForm({
                   {errors.email && displayErrors("email")}
                 </Field>
                 <Field>
-                  <FieldLabel>Password</FieldLabel>
+                  <FieldLabel>
+                    {t("authentication.login.passwordLabel")}
+                  </FieldLabel>
                   <InputGroup>
                     <InputGroupInput
-                      placeholder="Password..."
+                      placeholder={`${t("authentication.login.passwordLabel")}...`}
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
@@ -118,12 +130,7 @@ export function LoginForm({
                         variant="ghost"
                         onClick={handlePasswordViewability}
                       >
-                        <EyeOff
-                          className={`${isPasswordViewable ? "hidden" : "block"}`}
-                        />
-                        <Eye
-                          className={`${isPasswordViewable ? "block" : "hidden"}`}
-                        />
+                        {isPasswordViewable ? <Eye /> : <EyeOff />}
                       </Button>
                     </InputGroupAddon>
                   </InputGroup>
@@ -143,10 +150,12 @@ export function LoginForm({
           form="registrationForm"
           onClick={handleSubmit}
         >
-          {isSubmitting ? "Logging..." : "Log in"}
+          {isSubmitting
+            ? t("authentication.login.submitting")
+            : t("authentication.login.submit")}
         </Button>
         <Button className="w-full" size="lg" variant="secondary">
-          Passwordless Sign In
+          {t("authentication.login.passwordless")}
         </Button>
       </CardFooter>
     </Card>

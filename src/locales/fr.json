@@ -1,11 +1,86 @@
 {
   "error": {
-    "bad-request": "400 - Mauvaise requête.",
+    "badRequest": "400 - Mauvaise requête.",
     "unauthorised": "401 - Non autorisé.",
-    "forbidden": "403 - Accès refusé.",
-    "not-found": "404 - Introuvable.",
+    "forbidden": "403 - Interdit.",
+    "notFound": "404 - Non trouvé.",
     "server": "500 - Erreur interne du serveur.",
     "unknown": "Erreur inconnue",
     "axios": "Erreur Axios"
+  },
+  "authentication": {
+    "login": {
+      "title": "Connexion",
+      "description": "Entrez vos informations pour vous connecter",
+      "actionButton": "S'inscrire",
+      "emailLabel": "Email",
+      "passwordLabel": "Mot de passe",
+      "submit": "Se connecter",
+      "submutting": "Vérification de votre identité...",
+      "passwordless": "Connexion sans mot de passe",
+      "error": "Échec de la connexion !",
+      "success": "Vous êtes connecté",
+      "validationErrors": {
+        "email": {
+          "required": "L'email est requis"
+        },
+        "password": {
+          "required": "Le mot de passe est requis"
+        }
+      }
+    },
+    "register": {
+      "title": "Créer un compte",
+      "description": "Entrez vos informations pour créer un compte",
+      "actionButton": "Connexion",
+      "nameLabel": "Prénom",
+      "surnameLabel": "Nom",
+      "emailLabel": "Email",
+      "passwordLabel": "Mot de passe",
+      "submit": "S'inscrire",
+      "submitting": "Création de votre compte...",
+      "error": "Échec de l'inscription !",
+      "success": {
+        "message": "Inscription réussie !",
+        "userConfirmedDescription": "Bienvenue !",
+        "userNotConfirmedDescription": "Vous devez simplement confirmer votre compte pour continuer"
+      },
+      "validationErrors": {
+        "name": {
+          "required": "Le prénom est requis"
+        },
+        "surname": {
+          "required": "Le nom est requis"
+        },
+        "email": {
+          "required": "L'email est requis"
+        },
+        "password": {
+          "length": "Le mot de passe doit contenir au moins 8 caractères",
+          "number": "Le mot de passe doit contenir au moins un chiffre",
+          "lowercase": "Le mot de passe doit contenir au moins une lettre minuscule",
+          "uppercase": "Le mot de passe doit contenir au moins une lettre majuscule",
+          "character": "Le mot de passe doit contenir au moins un caractère spécial"
+        }
+      }
+    },
+    "otp": {
+      "title": "Vérifiez votre adresse email",
+      "description": "Nous avons envoyé un code de vérification à votre adresse email",
+      "codeLabel": "Code de vérification",
+      "submit": "Vérifier",
+      "submitting": "Vérification...",
+      "error": "Échec du code de vérification",
+      "success": {
+        "message": "Vérification réussie",
+        "description": "Votre adresse email a été confirmée"
+      },
+      "validationErrors": {
+        "confirmationCode": {
+          "length": "Le code doit contenir au moins 6 chiffres",
+          "numbers": "Le code doit contenir uniquement des chiffres"
+        }
+      }
+    }
   }
 }

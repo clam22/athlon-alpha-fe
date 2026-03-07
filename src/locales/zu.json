@@ -1,0 +1,86 @@
+{
+  "error": {
+    "badRequest": "400 - Isicelo esingalungile.",
+    "unauthorised": "401 - Awugunyaziwe.",
+    "forbidden": "403 - Akuvunyelwe.",
+    "notFound": "404 - Akutholakali.",
+    "server": "500 - Iphutha langaphakathi leseva.",
+    "unknown": "Iphutha elingaziwa",
+    "axios": "Iphutha le-Axios"
+  },
+  "authentication": {
+    "login": {
+      "title": "Ngena",
+      "description": "Faka imininingwane yakho ukuze ungene",
+      "actionButton": "Bhalisa",
+      "emailLabel": "I-imeyili",
+      "passwordLabel": "Iphasiwedi",
+      "submit": "Ngena",
+      "submutting": "Kuqinisekiswa ubuwena...",
+      "passwordless": "Ngena ngaphandle kwephasiwedi",
+      "error": "Ukungena kuhlulekile!",
+      "success": "Ungene ngempumelelo",
+      "validationErrors": {
+        "email": {
+          "required": "I-imeyili iyadingeka"
+        },
+        "password": {
+          "required": "Iphasiwedi iyadingeka"
+        }
+      }
+    },
+    "register": {
+      "title": "Dala i-akhawunti",
+      "description": "Faka imininingwane yakho ukuze udale i-akhawunti",
+      "actionButton": "Ngena",
+      "nameLabel": "Igama",
+      "surnameLabel": "Isibongo",
+      "emailLabel": "I-imeyili",
+      "passwordLabel": "Iphasiwedi",
+      "submit": "Bhalisa",
+      "submitting": "Kudalwa i-akhawunti yakho...",
+      "error": "Ukubhalisa kuhlulekile!",
+      "success": {
+        "message": "Ukubhalisa kuphumelele!",
+        "userConfirmedDescription": "Siyakwamukela!",
+        "userNotConfirmedDescription": "Udinga ukuqinisekisa i-akhawunti yakho ukuze uqhubeke"
+      },
+      "validationErrors": {
+        "name": {
+          "required": "Igama liyadingeka"
+        },
+        "surname": {
+          "required": "Isibongo siyadingeka"
+        },
+        "email": {
+          "required": "I-imeyili iyadingeka"
+        },
+        "password": {
+          "length": "Iphasiwedi kumele ibe okungenani nezinhlamvu eziyi-8",
+          "number": "Iphasiwedi kumele ibe nenombolo eyodwa",
+          "lowercase": "Iphasiwedi kumele ibe nenhlamvu encane",
+          "uppercase": "Iphasiwedi kumele ibe nenhlamvu enkulu",
+          "character": "Iphasiwedi kumele ibe nesimboli esikhethekile"
+        }
+      }
+    },
+    "otp": {
+      "title": "Qinisekisa ikheli lakho le-imeyili",
+      "description": "Sithumele ikhodi yokuqinisekisa ku-imeyili yakho",
+      "codeLabel": "Ikhodi yokuqinisekisa",
+      "submit": "Qinisekisa",
+      "submitting": "Kuyaqinisekiswa...",
+      "error": "Ikhodi yokuqinisekisa yehlulekile",
+      "success": {
+        "message": "Ukuqinisekisa kuphumelele",
+        "description": "Ikheli lakho le-imeyili seliqinisekisiwe"
+      },
+      "validationErrors": {
+        "confirmationCode": {
+          "length": "Ikhodi kumele ibe nezinombolo eziyisithupha",
+          "numbers": "Ikhodi kumele ibe nezinombolo kuphela"
+        }
+      }
+    }
+  }
+}

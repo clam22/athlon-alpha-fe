@@ -1,6 +1,6 @@
 import {
+  createConfirmAccountSchema,
   type ConfirmAccountInput,
-  ConfirmAccountSchema,
 } from "@/validations/authentication.schema";
 import { useForm } from "./use-form.hook";
 import { useState } from "react";
@@ -9,8 +9,10 @@ import { AuthenticationService } from "@/services/authentication.service";
 import { toast } from "sonner";
 import { setAuthMode, setisConfirmed } from "@/store/authentication.slice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useTranslation } from "react-i18next";
 
 export function useOTP() {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const currUserUnconfirmedEmail = useAppSelector(
     (state) => state.user.unconfirmedEmail,
@@ -25,6 +27,7 @@ export function useOTP() {
 
   const handleInputOTP = async () => {
     setIsSubmitting(true);
+    const ConfirmAccountSchema = createConfirmAccountSchema(t);
     const result = ConfirmAccountSchema.safeParse(values);
     if (!result.success) {
       setIsSubmitting(false);

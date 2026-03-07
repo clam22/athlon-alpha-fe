@@ -1,11 +1,89 @@
 {
   "error": {
-    "bad-request": "400 - Bad Request.",
+    "badRequest": "400 - Bad Request.",
     "unauthorised": "401 - Unauthorised.",
     "forbidden": "403 - Forbidden.",
-    "not-found": "404 - Not Found.",
+    "notFound": "404 - Not Found.",
     "server": "500 - Internal Server Error.",
     "unknown": "Unknown Error",
     "axios": "Axios Error"
+  },
+  "authentication": {
+    "login": {
+      "title": "Log In",
+      "description": "Enter your details to log in",
+      "actionButton": "Register",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Log In",
+      "submutting": "Confirming your identity...",
+      "passwordless": "PasswordLess Sign In",
+      "error": "Login Failed!",
+      "success": {
+        "message": "You are you logged in",
+        "description": "Welcome back, {{name}}!"
+      },
+      "validationErrors": {
+        "email": {
+          "required": "Email is required"
+        },
+        "password": {
+          "required": "Password is required"
+        }
+      }
+    },
+    "register": {
+      "title": "Create an account",
+      "description": "Enter your details to create an account",
+      "actionButton": "Login",
+      "nameLabel": "Name",
+      "surnameLabel": "Surname",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Register",
+      "submitting": "Creating your account...",
+      "error": "Registration Failed!",
+      "success": {
+        "message": "Registration Successful!",
+        "userConfirmedDescription": "Welcome Home!",
+        "userNotConfirmedDescription": "You just need to confirm your account and you will be all set"
+      },
+      "validationErrors": {
+        "name": {
+          "required": "Name is required"
+        },
+        "surname": {
+          "required": "Surname is required"
+        },
+        "email": {
+          "required": "Email is required"
+        },
+        "password": {
+          "length": "Password must be at least 8 characters",
+          "number": "Password must contain at least one number",
+          "lowercase": "Password must contain at least one lowercase letter",
+          "uppercase": "Password must contain at least one upper letter",
+          "character": "Password must contain at least one special character"
+        }
+      }
+    },
+    "otp": {
+      "title": "Verify your email address",
+      "description": "We sent an verification code to your email address",
+      "codeLabel": "Verification Code",
+      "submit": "Verify",
+      "submitting": "Verifying...",
+      "error": "Verification Code Failed",
+      "success": {
+        "message": "Verification Successful",
+        "description": "Your email address has been conirmed"
+      },
+      "validationErrors": {
+        "confirmationCode": {
+          "length": "Confirmation code must be at least 6 digits",
+          "numbers": "Confirmation code must only contain numbers"
+        }
+      }
+    }
   }
 }

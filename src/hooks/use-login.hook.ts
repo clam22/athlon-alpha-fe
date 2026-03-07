@@ -2,16 +2,18 @@ import type { LoginResponse } from "@/interfaces/authentication.interface";
 import { AuthenticationService } from "@/services/authentication.service";
 import { setUser } from "@/store/authentication.slice";
 import {
+  createLoginSchema,
   type LoginInput,
-  LoginSchema,
 } from "@/validations/authentication.schema";
 import { useState } from "react";
 import { toast } from "sonner";
 import { treeifyError } from "zod";
 import { useForm } from "./use-form.hook";
 import { useAppDispatch } from "@/store/hooks";
+import { useTranslation } from "react-i18next";
 
 export function useLogin() {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { values, handleInputChange, isSubmitting, setIsSubmitting } =
     useForm<LoginInput>({
@@ -25,6 +27,7 @@ export function useLogin() {
 
   const handleLogin = async () => {
     setIsSubmitting(true);
+    const LoginSchema = createLoginSchema(t);
     const result = LoginSchema.safeParse(values);
     if (!result.success) {
       setIsSubmitting(false);
@@ -51,12 +54,14 @@ export function useLogin() {
         }),
       );
       setIsSubmitting(false);
-      toast.success("You are logged in.", {
-        description: `Welcome back ${loginResponse.name}`,
+      toast.success(t("authentication.login.success.message"), {
+        description: t("authentication.login.success.description", {
+          name: loginResponse.name,
+        }),
       });
     } catch (error: any) {
       setIsSubmitting(false);
-      toast.error("Login Failed", {
+      toast.error(t("authentication.login.error"), {
         description: error.message,
       });
       console.log(error);

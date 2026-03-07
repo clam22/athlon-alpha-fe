@@ -16,6 +16,7 @@ import {
   InputOTPSlot,
 } from "./ui/input-otp";
 import type { ConfirmAccountInput } from "@/validations/authentication.schema";
+import { useTranslation } from "react-i18next";
 
 interface InputOTPForm {
   confirmationCode: string;
@@ -36,14 +37,16 @@ export function InputOTPForm({
   handleSubmit,
   isSubmitting,
 }: InputOTPFormProps) {
+  const { t } = useTranslation();
+
   return (
     <Card className="w-9/12 lg:w-6/12 flex-col">
       <CardHeader>
         <CardTitle className="flex justify-center heading3">
-          Verify you email address
+          {t("authentication.otp.title")}
         </CardTitle>
         <CardDescription className="flex justify-center pt-2">
-          We sent an verification code to your email address
+          {t("authentication.otp.description")}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -52,7 +55,7 @@ export function InputOTPForm({
             htmlFor="otp-verification"
             className="flex justify-center pb-3"
           >
-            Verification Code
+            {t("authentication.otp.codeLabel")}
           </FieldLabel>
           <div className="flex justify-center">
             <InputOTP
@@ -93,7 +96,9 @@ export function InputOTPForm({
             onClick={handleSubmit}
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Verifying..." : "Verify"}
+            {isSubmitting
+              ? t("authentication.otp.submitting")
+              : t("authentication.otp.submit")}
           </Button>
         </Field>
       </CardFooter>

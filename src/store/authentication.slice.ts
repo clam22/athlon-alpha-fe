@@ -15,7 +15,7 @@ const initialState: UserState = {
   unconfirmedEmail: "",
   isConfirmed: false,
   isAuthenticated: true,
-  authenticationMode: "login",
+  authenticationMode: "confirmUser",
 };
 
 const userSlice = createSlice({

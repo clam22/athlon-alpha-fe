@@ -1,7 +1,7 @@
 import { useForm } from "./use-form.hook";
 import {
+  createRegisterSchema,
   type RegisterInput,
-  RegisterSchema,
 } from "@/validations/authentication.schema";
 import { useState } from "react";
 import { treeifyError } from "zod";
@@ -10,8 +10,10 @@ import { AuthenticationService } from "@/services/authentication.service";
 import { toast } from "sonner";
 import { setAuthMode, setUnconfirmedEmail } from "@/store/authentication.slice";
 import { useAppDispatch } from "@/store/hooks";
+import { useTranslation } from "react-i18next";
 
 export function useRegister() {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { values, handleInputChange, isSubmitting, setIsSubmitting } =
     useForm<RegisterInput>({
@@ -27,6 +29,7 @@ export function useRegister() {
 
   const handleRegister = async () => {
     setIsSubmitting(true);
+    const RegisterSchema = createRegisterSchema(t);
     const result = RegisterSchema.safeParse(values);
     if (!result.success) {
       const tree = treeifyError(result.error);
