@@ -44,6 +44,11 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUser, clearUser, setUnconfirmedEmail, setAuthMode, setisConfirmed} =
-  userSlice.actions;
+export const {
+  setUser,
+  clearUser,
+  setUnconfirmedEmail,
+  setAuthMode,
+  setisConfirmed,
+} = userSlice.actions;
 export default userSlice.reducer;

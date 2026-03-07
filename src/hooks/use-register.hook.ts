@@ -1,7 +1,7 @@
 import { useForm } from "./use-form.hook";
 import {
+  createRegisterSchema,
   type RegisterInput,
-  RegisterSchema,
 } from "@/validations/authentication.schema";
 import { useState } from "react";
 import { treeifyError } from "zod";
@@ -10,20 +10,18 @@ import { AuthenticationService } from "@/services/authentication.service";
 import { toast } from "sonner";
 import { setAuthMode, setUnconfirmedEmail } from "@/store/authentication.slice";
 import { useAppDispatch } from "@/store/hooks";
+import { useTranslation } from "react-i18next";
 
 export function useRegister() {
-  const dispatch = useAppDispatch()
-  const {
-    values,
-    handleInputChange,
-    isSubmitting,
-    setIsSubmitting
-  } = useForm<RegisterInput>({
-    name: "",
-    surname: "",
-    email: "",
-    password: "",
-  });
+  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const { values, handleInputChange, isSubmitting, setIsSubmitting } =
+    useForm<RegisterInput>({
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+    });
 
   const [registerFormErrors, setRegisterFormErrors] = useState<
     Partial<Record<keyof RegisterInput, string[]>>
@@ -31,6 +29,7 @@ export function useRegister() {
 
   const handleRegister = async () => {
     setIsSubmitting(true);
+    const RegisterSchema = createRegisterSchema(t);
     const result = RegisterSchema.safeParse(values);
     if (!result.success) {
       const tree = treeifyError(result.error);
@@ -55,7 +54,7 @@ export function useRegister() {
           ? "Welcome home!"
           : "You just need to confirm your account and you will be all set!.",
       });
-      
+
       if (!registerResponse.userConfirmed) {
         dispatch(setAuthMode("confirmUser"));
       } else {
@@ -64,8 +63,7 @@ export function useRegister() {
     } catch (error: any) {
       setIsSubmitting(false);
       toast.error("Registration Failed!", {
-        description: error.message
-        
+        description: error.message,
       });
       console.log(error);
     }

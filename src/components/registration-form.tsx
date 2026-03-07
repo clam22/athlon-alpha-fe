@@ -20,6 +20,7 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/input-group";
 import { useState, type ChangeEvent, type MouseEventHandler } from "react";
 import type { AuthenticationMode } from "@/types/authentication.type";
 import type { RegisterInput } from "@/validations/authentication.schema";
+import { useTranslation } from "react-i18next";
 
 interface RegistrationForm {
   name: string;
@@ -45,6 +46,7 @@ export function RegistrationForm({
   handleAuthType,
   isSubmitting,
 }: RegistrationFormProps) {
+  const { t } = useTranslation();
   const [isPasswordViewable, SetIsPasswordViewable] = useState<Boolean>(false);
   const handlePasswordViewability = () => {
     SetIsPasswordViewable(!isPasswordViewable);
@@ -61,9 +63,11 @@ export function RegistrationForm({
   return (
     <Card className="w-9/12 lg:w-6/12">
       <CardHeader>
-        <CardTitle className="heading3">Registration</CardTitle>
+        <CardTitle className="heading3">
+          {t("authentication.register.title")}
+        </CardTitle>
         <CardDescription>
-          Enter your details to register an account
+          {t("authentication.register.description")}
         </CardDescription>
         <CardAction>
           <Button
@@ -72,7 +76,7 @@ export function RegistrationForm({
             className="heading4"
             onClick={() => handleAuthType("login")}
           >
-            Login
+            {t("authentication.register.actionButton")}
           </Button>
         </CardAction>
       </CardHeader>
@@ -88,10 +92,12 @@ export function RegistrationForm({
             <FieldSet>
               <FieldGroup>
                 <Field>
-                  <FieldLabel>Name</FieldLabel>
+                  <FieldLabel>
+                    {t("authentication.register.nameLabel")}
+                  </FieldLabel>
                   <InputGroup>
                     <InputGroupInput
-                      placeholder="Name..."
+                      placeholder={`${t("authentication.register.nameLabel")}...`}
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
@@ -104,10 +110,12 @@ export function RegistrationForm({
                   {errors.name && displayErrors("name")}
                 </Field>
                 <Field>
-                  <FieldLabel>Surname</FieldLabel>
+                  <FieldLabel>
+                    {t("authentication.register.surnameLabel")}
+                  </FieldLabel>
                   <InputGroup>
                     <InputGroupInput
-                      placeholder="Surname..."
+                      placeholder={`${t("authentication.register.surnameLabel")}...`}
                       name="surname"
                       value={formData.surname}
                       onChange={handleChange}
@@ -120,10 +128,12 @@ export function RegistrationForm({
                   {errors.surname && displayErrors("surname")}
                 </Field>
                 <Field>
-                  <FieldLabel className="">Email</FieldLabel>
+                  <FieldLabel>
+                    {t("authentication.register.emailLabel")}
+                  </FieldLabel>
                   <InputGroup>
                     <InputGroupInput
-                      placeholder="Email..."
+                      placeholder={`${t("authentication.register.emailLabel")}...`}
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
@@ -137,10 +147,12 @@ export function RegistrationForm({
                   {errors.email && displayErrors("email")}
                 </Field>
                 <Field>
-                  <FieldLabel className="">Password</FieldLabel>
+                  <FieldLabel>
+                    {t("authentication.register.passwordLabel")}
+                  </FieldLabel>
                   <InputGroup>
                     <InputGroupInput
-                      placeholder="Password..."
+                      placeholder={`${t("authentication.register.passwordLabel")}...`}
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
@@ -155,12 +167,7 @@ export function RegistrationForm({
                         variant="ghost"
                         onClick={handlePasswordViewability}
                       >
-                        <EyeOff
-                          className={`${isPasswordViewable ? "hidden" : "block"}`}
-                        />
-                        <Eye
-                          className={`${isPasswordViewable ? "block" : "hidden"}`}
-                        />
+                        {isPasswordViewable ? <Eye /> : <EyeOff />}
                       </Button>
                     </InputGroupAddon>
                   </InputGroup>
@@ -178,7 +185,9 @@ export function RegistrationForm({
           disabled={isSubmitting}
           onClick={handleSubmit}
         >
-          {isSubmitting ? "Registering..." : "Register"}
+          {isSubmitting
+            ? t("authentication.register.submitting")
+            : t("authentication.register.submit")}
         </Button>
       </CardFooter>
     </Card>

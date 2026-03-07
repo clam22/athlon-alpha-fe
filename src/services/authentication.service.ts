@@ -23,7 +23,7 @@ export const AuthenticationService = {
     );
     return response.data;
   },
-  
+
   confirmAccount: async (request: ConfirmAccountRequest): Promise<void> => {
     const response = await baseHttpClient.post(
       "/api/authentication/confirm-signup",
