@@ -116,7 +116,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 ;
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
@@ -206,5 +206,4 @@
   .scroll-m-20 {
     scroll-margin-top: 5rem;
   }
-
 }

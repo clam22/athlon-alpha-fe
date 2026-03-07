@@ -1,6 +1,6 @@
 export interface LoginRequest {
-    email: string;
-    password: string;
+  email: string;
+  password: string;
 }
 
 export interface LoginResponse {
@@ -11,18 +11,18 @@ export interface LoginResponse {
 }
 
 export interface RegisterRequest {
-    name: string;
-    surname: string;
-    email: string;
-    password: string;
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
 }
 
 export interface RegisterResponse {
-    session: string
-    userConfirmed: boolean
+  session: string;
+  userConfirmed: boolean;
 }
 
 export interface ConfirmAccountRequest {
-    email: string;
-    confirmationCode: string;
+  email: string;
+  confirmationCode: string;
 }

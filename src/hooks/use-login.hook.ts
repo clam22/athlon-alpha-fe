@@ -12,16 +12,12 @@ import { useForm } from "./use-form.hook";
 import { useAppDispatch } from "@/store/hooks";
 
 export function useLogin() {
-  const dispatch = useAppDispatch()
-  const {
-    values,
-    handleInputChange,
-    isSubmitting,
-    setIsSubmitting,
-  } = useForm<LoginInput>({
-    email: "",
-    password: "",
-  });
+  const dispatch = useAppDispatch();
+  const { values, handleInputChange, isSubmitting, setIsSubmitting } =
+    useForm<LoginInput>({
+      email: "",
+      password: "",
+    });
 
   const [loginFormErrors, setLoginFormErrors] = useState<
     Partial<Record<keyof LoginInput, string[]>>
@@ -61,7 +57,7 @@ export function useLogin() {
     } catch (error: any) {
       setIsSubmitting(false);
       toast.error("Login Failed", {
-        description: error.message
+        description: error.message,
       });
       console.log(error);
     }

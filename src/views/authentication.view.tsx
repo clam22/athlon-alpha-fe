@@ -9,11 +9,11 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setAuthMode } from "@/store/authentication.slice";
 
 export function AuthenticationView() {
-  const mode = useAppSelector((state) => state.user.authenticationMode)
+  const mode = useAppSelector((state) => state.user.authenticationMode);
   const dispatch = useAppDispatch();
 
   const handleChangeAuthType = (authType: AuthenticationMode) => {
-    dispatch(setAuthMode(authType))
+    dispatch(setAuthMode(authType));
   };
 
   const {

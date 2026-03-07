@@ -1,1 +1,1 @@
-export type AuthenticationMode = "login" | "register" | "confirmUser"
+export type AuthenticationMode = "login" | "register" | "confirmUser";

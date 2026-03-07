@@ -1,5 +1,5 @@
 {
-  "error" : {
+  "error": {
     "bad-request": "400 - Bad Request.",
     "unauthorised": "401 - Unauthorised.",
     "forbidden": "403 - Forbidden.",

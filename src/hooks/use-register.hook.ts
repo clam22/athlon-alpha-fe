@@ -12,18 +12,14 @@ import { setAuthMode, setUnconfirmedEmail } from "@/store/authentication.slice";
 import { useAppDispatch } from "@/store/hooks";
 
 export function useRegister() {
-  const dispatch = useAppDispatch()
-  const {
-    values,
-    handleInputChange,
-    isSubmitting,
-    setIsSubmitting
-  } = useForm<RegisterInput>({
-    name: "",
-    surname: "",
-    email: "",
-    password: "",
-  });
+  const dispatch = useAppDispatch();
+  const { values, handleInputChange, isSubmitting, setIsSubmitting } =
+    useForm<RegisterInput>({
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+    });
 
   const [registerFormErrors, setRegisterFormErrors] = useState<
     Partial<Record<keyof RegisterInput, string[]>>
@@ -55,7 +51,7 @@ export function useRegister() {
           ? "Welcome home!"
           : "You just need to confirm your account and you will be all set!.",
       });
-      
+
       if (!registerResponse.userConfirmed) {
         dispatch(setAuthMode("confirmUser"));
       } else {
@@ -64,8 +60,7 @@ export function useRegister() {
     } catch (error: any) {
       setIsSubmitting(false);
       toast.error("Registration Failed!", {
-        description: error.message
-        
+        description: error.message,
       });
       console.log(error);
     }

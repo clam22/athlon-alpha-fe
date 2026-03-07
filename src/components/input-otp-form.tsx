@@ -36,7 +36,6 @@ export function InputOTPForm({
   handleSubmit,
   isSubmitting,
 }: InputOTPFormProps) {
-
   return (
     <Card className="w-9/12 lg:w-6/12 flex-col">
       <CardHeader>
