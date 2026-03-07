@@ -16,7 +16,7 @@
       "emailLabel": "Email",
       "passwordLabel": "Password",
       "submit": "Log In",
-      "submutting": "Confirming your identity...",
+      "submitting": "Confirming your identity...",
       "passwordless": "PasswordLess Sign In",
       "error": "Login Failed!",
       "success": {
