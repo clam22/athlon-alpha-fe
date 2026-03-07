@@ -2,8 +2,7 @@ import englishTranslations from "@/locales/en.json";
 import frenchTranslations from "@/locales/fr.json";
 import tsongaTranslations from "@/locales/ts.json";
 import zuluTranslations from "@/locales/zu.json";
-import LanguageDetector from "i18next-browser-languagedetector"
-
+import LanguageDetector from "i18next-browser-languagedetector";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
@@ -25,7 +24,6 @@ i18n
         translation: zuluTranslations,
       },
     },
-    lng: "en",
     fallbackLng: "en",
     detection: {
       order: ["localStorage", "navigator"],
