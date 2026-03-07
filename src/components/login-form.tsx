@@ -18,7 +18,7 @@ import {
 } from "./ui/field";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/input-group";
 import React, { useState } from "react";
-import type { AuthenticationType } from "@/types/authentication.type";
+import type { AuthenticationMode } from "@/types/authentication.type";
 import type { LoginInput } from "@/validations/authentication.schema";
 
 interface LoginForm {
@@ -31,7 +31,7 @@ interface LoginFormProps {
   errors?: Partial<Record<keyof LoginForm, string[]>>;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: React.MouseEventHandler<HTMLButtonElement>;
-  handleAuthType: (auth: AuthenticationType) => void;
+  handleAuthType: (auth: AuthenticationMode) => void;
   isSubmitting?: boolean;
 }
 
