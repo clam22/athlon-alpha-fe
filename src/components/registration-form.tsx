@@ -18,7 +18,7 @@ import {
 } from "./ui/field";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/input-group";
 import { useState, type ChangeEvent, type MouseEventHandler } from "react";
-import type { AuthenticationType } from "@/types/authentication.type";
+import type { AuthenticationMode } from "@/types/authentication.type";
 import type { RegisterInput } from "@/validations/authentication.schema";
 
 interface RegistrationForm {
@@ -33,7 +33,7 @@ interface RegistrationFormProps {
   errors?: Partial<Record<keyof RegistrationForm, string[]>>;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: MouseEventHandler<HTMLButtonElement>;
-  handleAuthType: (e: AuthenticationType) => void;
+  handleAuthType: (e: AuthenticationMode) => void;
   isSubmitting?: boolean;
 }
 
