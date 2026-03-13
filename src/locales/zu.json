@@ -8,6 +8,13 @@
     "unknown": "Iphutha elingaziwa",
     "axios": "Iphutha le-Axios"
   },
+  "language": {
+    "action": "Khetha ulimi",
+    "en": "IsiNgisi",
+    "fr": "IsiFulentshi",
+    "ts": "Xitsonga",
+    "zu": "isiZulu"
+  },
   "authentication": {
     "login": {
       "title": "Ngena",
@@ -16,7 +23,7 @@
       "emailLabel": "I-imeyili",
       "passwordLabel": "Iphasiwedi",
       "submit": "Ngena",
-      "submutting": "Kuqinisekiswa ubuwena...",
+      "submitting": "Kuqinisekiswa ubuwena...",
       "passwordless": "Ngena ngaphandle kwephasiwedi",
       "error": "Ukungena kuhlulekile!",
       "success": "Ungene ngempumelelo",

@@ -8,6 +8,13 @@
     "unknown": "Erreur inconnue",
     "axios": "Erreur Axios"
   },
+  "language": {
+    "action": "Sélectionner la langue",
+    "en": "Anglais",
+    "fr": "Français",
+    "ts": "Tsonga",
+    "zu": "Zoulou"
+  },
   "authentication": {
     "login": {
       "title": "Connexion",
@@ -16,7 +23,7 @@
       "emailLabel": "Email",
       "passwordLabel": "Mot de passe",
       "submit": "Se connecter",
-      "submutting": "Vérification de votre identité...",
+      "submitting": "Vérification de votre identité...",
       "passwordless": "Connexion sans mot de passe",
       "error": "Échec de la connexion !",
       "success": "Vous êtes connecté",

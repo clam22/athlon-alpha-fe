@@ -8,6 +8,13 @@
     "unknown": "Xihoxo lexi nga tivekiki",
     "axios": "Xihoxo xa Axios"
   },
+  "language": {
+    "action": "Hlawula ririmi",
+    "en": "Xinghezi",
+    "fr": "Xifurentshi",
+    "ts": "Xitsonga",
+    "zu": "isiZulu"
+  },
   "authentication": {
     "login": {
       "title": "Nghena",
@@ -16,7 +23,7 @@
       "emailLabel": "Imeyili",
       "passwordLabel": "Phasiwedi",
       "submit": "Nghena",
-      "submutting": "Ku tiyisisa vutitivisi bya wena...",
+      "submitting": "Ku tiyisisa vutitivisi bya wena...",
       "passwordless": "Nghena handle ka phasiwedi",
       "error": "Ku nghena ku tsandzekile!",
       "success": "U nghene kahle",

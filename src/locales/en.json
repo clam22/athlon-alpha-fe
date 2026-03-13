@@ -8,6 +8,13 @@
     "unknown": "Unknown Error",
     "axios": "Axios Error"
   },
+  "language": {
+    "action": "Select language",
+    "en": "English",
+    "fr": "French",
+    "ts": "Tsonga",
+    "zu": "Zulu"
+  },
   "authentication": {
     "login": {
       "title": "Log In",
