@@ -11,7 +11,7 @@ import { Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const handleLanguageChange = (value: string) => {
     i18n.changeLanguage(value);
@@ -32,10 +32,10 @@ export const LanguageSwitcher = () => {
       <SelectContent position="popper">
         <SelectGroup>
           <SelectLabel>Langages</SelectLabel>
-          <SelectItem value="en">English</SelectItem>
-          <SelectItem value="fr">French</SelectItem>
-          <SelectItem value="ts">Xitsonga</SelectItem>
-          <SelectItem value="zu">Isizulu</SelectItem>
+          <SelectItem value="en">{t("language.en")}</SelectItem>
+          <SelectItem value="fr">{t("language.fr")}</SelectItem>
+          <SelectItem value="ts">{t("language.ts")}</SelectItem>
+          <SelectItem value="zu">{t("language.zu")}</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
