@@ -7,6 +7,8 @@ import { useOTP } from "@/hooks/use-otp.hook";
 import type { AuthenticationMode } from "@/types/authentication.type";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setAuthMode } from "@/store/authentication.slice";
+import { ModeToggle } from "@/components/mode-toggle";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export function AuthenticationView() {
   const mode = useAppSelector((state) => state.user.authenticationMode);
@@ -39,6 +41,13 @@ export function AuthenticationView() {
   } = useOTP();
   return (
     <div className="fixed h-full w-full flex ">
+      <div className="absolute left-20 top-15 right-20 flex items-center justify-between z-10">
+        <h1 className="heading1">ἌΘΛΟΝ</h1>
+        <div className="flex gap-4">
+          <ModeToggle />
+          <LanguageSwitcher />
+        </div>
+      </div>
       <div className="hidden xl:basis-1/2 xl:flex h-full items-end justify-center">
         <img
           className="hidden dark:block h-10/12"
