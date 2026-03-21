@@ -41,8 +41,9 @@ export function AuthenticationView() {
   } = useOTP();
   return (
     <div className="fixed h-full w-full flex ">
+      <title>Athlon | Authentication</title>
       <div className="absolute left-20 top-15 right-20 flex items-center justify-between z-10">
-        <h1 className="heading1">ἌΘΛΟΝ</h1>
+        <h1 className="heading1">ἌΘΛΟΝ.</h1>
         <div className="flex gap-4">
           <ModeToggle />
           <LanguageSwitcher />

@@ -22,16 +22,9 @@ import type { AuthenticationMode } from "@/types/authentication.type";
 import type { RegisterInput } from "@/validations/authentication.schema";
 import { useTranslation } from "react-i18next";
 
-interface RegistrationForm {
-  name: string;
-  surname: string;
-  email: string;
-  password: string;
-}
-
 interface RegistrationFormProps {
-  formData: RegistrationForm;
-  errors?: Partial<Record<keyof RegistrationForm, string[]>>;
+  formData: RegisterInput;
+  errors?: Partial<Record<keyof RegisterInput, string[]>>;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: MouseEventHandler<HTMLButtonElement>;
   handleAuthType: (e: AuthenticationMode) => void;

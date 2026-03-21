@@ -185,7 +185,7 @@
 
   /* Tables */
   .table {
-    @apply w-full border-collapse my-6;
+    @apply w-full border-collapse ;
   }
 
   .table th,

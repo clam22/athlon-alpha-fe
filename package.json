@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Connel Manhica connel.l.manhica23@gmail.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -15,6 +16,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "@tailwindcss/vite": "^4.2.1",
+    "@tanstack/react-table": "^8.21.3",
     "axios": "^1.13.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

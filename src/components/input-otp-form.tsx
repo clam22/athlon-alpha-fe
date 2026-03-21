@@ -18,12 +18,8 @@ import {
 import type { ConfirmAccountInput } from "@/validations/authentication.schema";
 import { useTranslation } from "react-i18next";
 
-interface InputOTPForm {
-  confirmationCode: string;
-}
-
 interface InputOTPFormProps {
-  formData: InputOTPForm;
+  formData: ConfirmAccountInput;
   errors?: Partial<Record<keyof ConfirmAccountInput, string[]>>;
   handleChange: (value: string) => void;
   handleSubmit: MouseEventHandler<HTMLButtonElement>;

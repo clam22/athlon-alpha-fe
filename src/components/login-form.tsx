@@ -22,14 +22,11 @@ import type { AuthenticationMode } from "@/types/authentication.type";
 import type { LoginInput } from "@/validations/authentication.schema";
 import { useTranslation } from "react-i18next";
 
-interface LoginForm {
-  email: string;
-  password: string;
-}
+
 
 interface LoginFormProps {
-  formData: LoginForm;
-  errors?: Partial<Record<keyof LoginForm, string[]>>;
+  formData: LoginInput;
+  errors?: Partial<Record<keyof LoginInput, string[]>>;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: React.MouseEventHandler<HTMLButtonElement>;
   handleAuthType: (auth: AuthenticationMode) => void;
